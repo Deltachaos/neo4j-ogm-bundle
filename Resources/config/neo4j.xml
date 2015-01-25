@@ -6,11 +6,21 @@
 
     <parameters>
         <parameter key="ogm.entity.class">HireVoice\Neo4j\EntityManager</parameter>
+        <parameter key="data_collector.neo4j.class">Neo4j\OGM\OGMBundle\DataCollector\Neo4jQueryDataCollector</parameter>
+        <parameter key="data_collector.neo4j.provider.class">Neo4j\OGM\OGMBundle\DataCollector\Neo4jQueryDataProvider</parameter>
     </parameters>
 
     <services>
         <service id="neo4j.manager" class="%ogm.entity.class%">
             <argument>%neo4j_ogm.config%</argument>
+        </service>
+        <service id="data_collector.neo4j.provider" class="%data_collector.neo4j.provider.class%">
+            <argument type="service" id="neo4j.manager"/>
+            <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" />
+        </service>
+        <service id="data_collector.neo4j" class="%data_collector.neo4j.class%">
+            <argument type="service" id="data_collector.neo4j.provider"/>
+            <tag name="data_collector" template="Neo4jOGMBundle:Collector:neo4j.html.twig" id="neo4j" />
         </service>
     </services>
 </container>
