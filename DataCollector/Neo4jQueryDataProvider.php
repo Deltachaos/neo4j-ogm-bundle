@@ -25,7 +25,7 @@ class Neo4jQueryDataProvider
     /**
      * @var int
      */
-    protected $count;
+    protected $count = 0;
 
     /**
      * @var float
