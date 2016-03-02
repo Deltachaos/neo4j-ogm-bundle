@@ -15,7 +15,9 @@
 {% block toolbar %}
     {% set icon %}
     <img width="26" height="28" alt="Neo4j" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAcCAYAAAEIFJ9FAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wEZDBonI/CDKwAAA8pJREFUSMfdVU9oI1UY/703kwlpM02bSUyTNCEhaSaVtodQC6WYaSNqQVEpeCxF2IXiSZQqBU+7Jy+eRAShHuqlIiwruIcV09qTFupW0YRQlmbDpn9XN0lnZEIneR5sNGkn3e1SBP2d3rzvm+/3vu/7ve8BZgiHwz8risLQFj6f72NTAwGAaDSap5TunDXPzc25WzYCgcB3OA+Dg4MPFEVhPT09qy0GRVFYMplkeGyEw+E7zd+MMcqfrMVGSAAghBAKANvb21FcCLIsF9uWzu/338alIRKJPDc5OckmJiaYKIoexhi1Wq1fDw0Nlf1+/zdn2tKUNyGEMABIJBKaKIodDZuqqvWNjQ3OlJEx1ggkRqPRSiqVYi6X697m5qa9nUzCY2NjbHx8vC5J0vV2qdBmBkmSPhUEATzPk/7+/vfxH4ckSa95vd6t4eHhZ5sqaFbVfwrhdrs/i8ViUcMwviSEsFAo9GY8Hr+fSCQOBUEYb/SvpbkDAwNvA7heKBReJ4TsjIyM3GHsLz9KKVZWVtwAHrQwZbPZD7PZbKemabcIIVcaPwBAvV6Hw+EYPHO8ZhwfH391pqGU5htrUy0ZhnG3Uqk85fP5ntF1vb6+vn5V07SVyyu73+//PplMMlmWK9PT07Sd39/HW1hYcGia9hEhBHa73bq6umo3DOP2uYKNRCK15orxPP/TYx0vEAgMer3etd7e3realMDh/wGr1doRCAS65+fnuy4j3plb4/V6Y4SQG/F4/GkAqFarbH9//4e9vb0pVVXLDb9UKuVNp9PO0dFRd6FQOHA6nfczmUzFbBiaSrxUKlltNltnvV5HrVYDz/OE4zi7qqp0eXlZEEXxvVgs9huAHUVRfrHZbCuyLP/qcrnKHo/nriRJr5w8KuzcjABgZmaGHBwcuNLpdD0UCtVyuRyhlD7s7Ox8R5bla82j+jSOjo7KmUxmUtf1lmeON3NeWlpiAA4BYGtrC5RSMMaox+NxWSwW4bxeaJpW1XWdb3spHtlMQurBYPBasVj8olqtglLabAMAtru7+3uxWPxgamrqx0eKoc1jxRNCjFOqHKtWqy8QQjyMsRyAmwDyTyTJxcVFm9PpfNfhcNzo7u7+XBCE5y9N3owxMjs7a1lbW/ukr6/vDY5rnQy6rrNcLvdyqVS6dREi3qQXLBgMcna7/dXTJADAcRzRdf1FABciMh1k5XLZODw8/Larq+slSmmHxWKhlFKoqlrN5/M3y+XyVQDsiUrHGOtoQ1w7ydwKgK/VakccxxGTOOxUTAbgD0JI7V+dnX8CJl9lil3AxCgAAAAASUVORK5CYII=" />
-    <span class="sf-toolbar-status{% if 50 < collector.count %} sf-toolbar-status-yellow{% endif %}">{{ collector.count }}</span>
+    <span class="sf-toolbar-value{% if 50 < collector.count %} sf-toolbar-status-yellow{% endif %}">
+        {{ collector.count }}
+    </span>
     {% endset %}
     {% set text %}
     <div class="sf-toolbar-info-piece">
